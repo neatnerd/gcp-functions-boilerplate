@@ -1,0 +1,14 @@
+{
+  "name": "gcp-functions-boilerplate",
+  "version": "0.0.1",
+  "description": "Template for GCP Cloud Functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gcp"
+  ],
+  "author": "Arshinskiy Mike",
+  "license": "ISC"
+}
