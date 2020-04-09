@@ -15,6 +15,8 @@
   "author": "Arshinskiy Mike",
   "license": "ISC",
   "devDependencies": {
-    "@google-cloud/functions-framework": "^1.5.1"
+    "@google-cloud/functions-framework": "^1.5.1",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0"
   }
 }

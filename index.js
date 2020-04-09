@@ -1,12 +1,12 @@
-const http_function = async (req, res) => {
-    res.send('Hello, World');
-}
+const httpFunction = async (req, res) => {
+  res.send('Hello, World');
+};
 
-const background_function = async (event, context) => {
-    console.log('Hello, World');
-}
+const backgroundFunction = async (event, context) => {
+  console.log('Hello, World');
+};
 
 module.exports = {
-    http_function,
-    background_function
-}
+  httpFunction,
+  backgroundFunction,
+};
