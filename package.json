@@ -3,12 +3,18 @@
   "version": "0.0.1",
   "description": "Template for GCP Cloud Functions",
   "main": "index.js",
+  "localPort": 8080,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "background-function": "functions-framework --target=background_function --signature-type=event --port $npm_package_localPort",
+    "http-function": "functions-framework --target=http_function --signature-type=http --port $npm_package_localPort"
   },
   "keywords": [
-    "gcp"
+    "gcp",
+    "cloud-functions"
   ],
   "author": "Arshinskiy Mike",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^1.5.1"
+  }
 }
