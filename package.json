@@ -6,7 +6,8 @@
   "localPort": 8080,
   "scripts": {
     "background-function": "functions-framework --target=background_function --signature-type=event --port $npm_package_localPort",
-    "http-function": "functions-framework --target=http_function --signature-type=http --port $npm_package_localPort"
+    "http-function": "functions-framework --target=http_function --signature-type=http --port $npm_package_localPort",
+    "test": "jest"
   },
   "keywords": [
     "gcp",
@@ -17,6 +18,8 @@
   "devDependencies": {
     "@google-cloud/functions-framework": "^1.5.1",
     "eslint": "^6.8.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "jest": "^25.4.0",
+    "jest-express": "^1.12.0"
   }
 }
