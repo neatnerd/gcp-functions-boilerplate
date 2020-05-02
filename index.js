@@ -7,7 +7,7 @@ const httpFunction = async (req, res) => {
 };
 
 const backgroundFunction = async (event, context) => {
-  const data = getDataFromEvent(event);
+  const data = getDataFromEvent(event, context);
   const {PubSub} = require('@google-cloud/pubsub');
   const pubSubClient = new PubSub();
   const publisher = pubSubClient.topic(data.topic);
