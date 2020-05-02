@@ -7,7 +7,25 @@ const httpFunction = async (req, res) => {
 };
 
 const backgroundFunction = async (event, context) => {
-  console.log('Hello, World');
+  const data = getDataFromEvent(event);
+  const {PubSub} = require('@google-cloud/pubsub');
+  const pubSubClient = new PubSub();
+  const publisher = pubSubClient.topic(data.topic);
+  publisher.publishJSON({
+    message: `Hello ${data.name || 'World'}!`,
+  });
+};
+
+
+const getDataFromEvent = (event, context) => {
+  let data = undefined;
+  if (event) {
+    data = event.data;
+  }
+  if (!data) {
+    data = context.message.data;
+  }
+  return JSON.parse(Buffer.from(data, 'base64').toString());
 };
 
 module.exports = {

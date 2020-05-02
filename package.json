@@ -21,5 +21,8 @@
     "eslint-config-google": "^0.14.0",
     "jest": "^25.4.0",
     "jest-express": "^1.12.0"
+  },
+  "dependencies": {
+    "@google-cloud/pubsub": "^1.7.2"
   }
 }
