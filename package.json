@@ -7,6 +7,11 @@
   "scripts": {
     "background-function": "functions-framework --target=background_function --signature-type=event --port $npm_package_localPort",
     "http-function": "functions-framework --target=http_function --signature-type=http --port $npm_package_localPort",
+    "pubsub:start": "run-p pubsub:run pubsub:delay-init",
+    "pubsub:run": "./scripts/pubsub.sh start",
+    "pubsub:init": "./scripts/pubsub.sh init",
+    "pubsub:delay-init": "run-s util:delay pubsub:init",
+    "util:delay": "sleep 3",
     "test": "jest"
   },
   "keywords": [
@@ -20,8 +25,9 @@
     "eslint": "^6.8.0",
     "eslint-config-google": "^0.14.0",
     "jest": "^25.4.0",
-    "jest-express": "^1.12.0"
-  },
+    "jest-express": "^1.12.0",
+    "npm-run-all": "^4.1.5"
+    },
   "dependencies": {
     "@google-cloud/pubsub": "^1.7.2"
   }
