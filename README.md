@@ -68,3 +68,4 @@ curl -d "@mockPubsub.json" \
 - [ ] Deployment with Cloud Build
 - [ ] System tests setup
 - [ ] Docker image
+- [ ] Git hooks
