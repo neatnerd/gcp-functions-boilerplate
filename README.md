@@ -19,7 +19,7 @@ Parameters and challenges for setting up functions are fundamentally different a
 
 HTTP functions are similar to setting up a middleware and you will deal with topics such as HTTP verbs, CORS and multipart requests. A lot of useful examples [here](https://cloud.google.com/functions/docs/writing/http). There are two obvious parameters - request(`req`) and response(`res`), so if you are familiar with Express, it should be self explanatory
 
-Background functions are used when response and request are processed asynchronously. There is a plenty of triggers provided by GCP, for example PubSub(message queue) and GCP Storage(file changes watchers). The full list of triggers is available [here](https://cloud.google.com/functions/docs/calling). There are two parameters - `data` or `event` trigger specific and the `context` contains additionally the information about the request.  
+Background functions are used when response and request are processed asynchronously. There is a plenty of triggers provided by GCP, for example PubSub(message queue) and GCP Storage(file changes watchers). The full list of triggers is available [here](https://cloud.google.com/functions/docs/calling). There are two parameters - `data` or `event` trigger specific and the `context` contains additionally the information about the request.
 
 
 ## Local setup
@@ -44,7 +44,7 @@ To test HTTP function you can just curl the localhost port like this:
 curl localhost:8080
 ```
 
-Testing of background functions is more involved. Functions framework expects to pass certain headers, which does not correspond to actual behavior in productive environment. This is a bug well documented in [#96](https://github.com/GoogleCloudPlatform/functions-framework-nodejs/issues/96) and in [#41](https://github.com/GoogleCloudPlatform/functions-framework-nodejs/issues/41). 
+Testing of background functions is more involved. Functions framework expects to pass certain headers, which does not correspond to actual behavior in productive environment. This is a bug well documented in [#96](https://github.com/GoogleCloudPlatform/functions-framework-nodejs/issues/96) and in [#41](https://github.com/GoogleCloudPlatform/functions-framework-nodejs/issues/41).
 ```bash
 curl -d "@mockPubsub.json" \
   -X POST \
@@ -61,6 +61,6 @@ curl -d "@mockPubsub.json" \
 
 - [x] Templates functions
 - [x] Linting
-- [ ] Unit test setup
+- [x] Unit test setup
 - [ ] Deployment from local machine
 - [ ] Deployment with Cloud Build
