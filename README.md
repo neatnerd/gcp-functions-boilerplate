@@ -66,3 +66,5 @@ curl -d "@mockPubsub.json" \
 - [ ] VS code configuration
 - [ ] Deployment from local machine
 - [ ] Deployment with Cloud Build
+- [ ] System tests setup
+- [ ] Docker image
