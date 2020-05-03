@@ -5,8 +5,8 @@
   "main": "index.js",
   "localPort": 8080,
   "scripts": {
-    "background-function": "functions-framework --target=background_function --signature-type=event --port $npm_package_localPort",
-    "http-function": "functions-framework --target=http_function --signature-type=http --port $npm_package_localPort",
+    "background-function": "functions-framework --target=backgroundFunction --signature-type=event --port $npm_package_localPort",
+    "http-function": "functions-framework --target=httpFunction --signature-type=http --port $npm_package_localPort",
     "pubsub:start": "run-p pubsub:run pubsub:delay-init",
     "pubsub:run": "./scripts/pubsub.sh start",
     "pubsub:init": "./scripts/pubsub.sh init",
