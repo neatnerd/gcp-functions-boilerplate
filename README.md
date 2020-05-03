@@ -62,5 +62,7 @@ curl -d "@mockPubsub.json" \
 - [x] Templates functions
 - [x] Linting
 - [x] Unit test setup
+- [ ] Integration test setup
+- [ ] VS code configuration
 - [ ] Deployment from local machine
 - [ ] Deployment with Cloud Build
