@@ -6,6 +6,19 @@ const httpFunction = async (req, res) => {
       .send(`Hello ${escapeHtml(req.query.name || req.body.name || 'World')}!`);
 };
 
+const httpSideEffectFunction = async (req, res) =>{
+  const fs = require('fs');
+  const value = escapeHtml(req.query.name || req.body.name || 'World');
+  const line = `Hello ${value}!\n`;
+  try {
+    await fs.promises.appendFile('log.txt', line);
+  } catch (error) {
+    res.status(503).send('could not write to a file').end();
+    return;
+  }
+  res.status(200).send('wrote file');
+};
+
 const backgroundFunction = async (event, context) => {
   const data = getDataFromEvent(event, context);
   const {PubSub} = require('@google-cloud/pubsub');
@@ -30,5 +43,6 @@ const getDataFromEvent = (event, context) => {
 
 module.exports = {
   httpFunction,
+  httpSideEffectFunction,
   backgroundFunction,
 };
